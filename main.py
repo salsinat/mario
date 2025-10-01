@@ -14,16 +14,20 @@ pygame.display.set_caption("MARIO BROS")
 running = True;
 COLOR_BLACK = Color(0, 0, 0)
 COLOR_RED = Color(255, 0, 0)
+clock = pygame.time.Clock()
+FPS = 60
 
 #-------------------------------------- CREATION DU PERSONNAGE --------------------------------------#
 square = Rect(5, 5, 50, 50)
-mov_speed = 5
 
 #-------------------------------------- MAJ DE L'ETAT DE JEU --------------------------------------#
+delta = 0
 
 while running:
     # On "repeint" l'écran en noir afin de ne pas laisser l'ancien carré
     screen.fill(COLOR_BLACK)
+
+    mov_speed = 5 * delta / 1000 * FPS
 
     """ Gestion des évènements """
     key_pressed = pygame.key.get_pressed()
@@ -44,8 +48,10 @@ while running:
     """ Logique du jeu """
     pygame.draw.rect(screen, COLOR_RED, square)
 
-    """ Rafraichissement """ 
+    """ Rendu de l'écran """ 
     pygame.display.flip()
+
+    delta = clock.tick(30)
 
 pygame.quit()
 exit()
