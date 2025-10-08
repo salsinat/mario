@@ -35,15 +35,15 @@ while running:
         if event.type == pygame.QUIT or key_pressed[K_ESCAPE]:
             running = False
         
-        # Gestion de l'appluie des flêches directionnelles du clavier pour bouger notre carré
-        if key_pressed[K_UP]:
-            square.y -= mov_speed
-        elif key_pressed[K_DOWN]:
-            square.y += mov_speed
-        if key_pressed[K_LEFT]:
-            square.x -= mov_speed
-        elif key_pressed[K_RIGHT]:
-            square.x += mov_speed
+    # Gestion de l'appluie des flêches directionnelles du clavier pour bouger notre carré
+    if key_pressed[K_UP]:
+        square.y -= mov_speed
+    elif key_pressed[K_DOWN]:
+        square.y += mov_speed
+    if key_pressed[K_LEFT]:
+        square.x -= mov_speed
+    elif key_pressed[K_RIGHT]:
+        square.x += mov_speed
     
     """ Logique du jeu """
     pygame.draw.rect(screen, COLOR_RED, square)
