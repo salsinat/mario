@@ -1,6 +1,6 @@
 import pygame
 from pygame import Surface
-from pygame.locals import *
+from pygame.locals import * # type: ignore
 
 from entities.entity import Entity
 from gameloop_interface import GameLoopInterface
